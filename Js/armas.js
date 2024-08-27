@@ -12,7 +12,7 @@ class GestorArmas {
         try {
             //Llamo al armas.iniciar para que me saque los datos de la API y me los devulva como se define en el fichero llamadasApi.js
             const armas = await Armas.iniciar();
-            console.log(armas)
+            ///console.log(armas)
             //Necesito crear la constante categorias por que en el otro fichero tengo todas las caregorias respecto a las armas, con la funcion obtenerCategorias, almaceno las categorias de 1 en 1.
             const categorias = this.obtenerCategorias(armas);
             this.mostrarBotones(categorias);
@@ -80,7 +80,7 @@ class GestorArmas {
     }
 
     aplicarDanioParteCuerpo(parteCuerpo) { // Esta funcion es llamada cuando tienes un arma seleccionada y ademas disparas en alguna parte del cuerpo
-        console.log("Se ha llamado a aplicarDanioParteCuerpo con la parte del cuerpo:", parteCuerpo);
+        //console.log("Se ha llamado a aplicarDanioParteCuerpo con la parte del cuerpo:", parteCuerpo);
         //Se verifica si hay algun arma seleccionada
         if (this.armaSeleccionada) {
             //Aquí se obtiene el objeto que contiene los rangos de daño del arma seleccionada que se importa del fichero llamadasApi.js
@@ -102,7 +102,7 @@ class GestorArmas {
             if (!isNaN(danioParteCuerpo) && !isNaN(this.vida)) {
                 this.vida -= danioParteCuerpo;
                 this.actualizarVidaEnHTML(this.vida); // Actualiza la vida en el HTML
-                console.log(`Puntos de vida restantes: ${this.vida}`);
+                //console.log(`Puntos de vida restantes: ${this.vida}`);
             } else {
                 console.error("El valor de daño o vida no es numérico.");
             }
@@ -192,11 +192,11 @@ class GestorArmas {
             }
         }
         this.armaSeleccionada = arma;
-        console.log(`Arma seleccionada: ${arma.nombre}`);
+        //console.log(`Arma seleccionada: ${arma.nombre}`);
     }
 
     deseleccionarArma(arma) {//Esto nacio como algo funcional y al final no hacia falta, solo es un console.log que no he querido tocar.
-        console.log(`Arma deseleccionada: ${arma.nombre}`);
+        ///console.log(`Arma deseleccionada: ${arma.nombre}`);
     }
 
     actualizarVidaEnHTML(vida) {//Esta funcion solo es para el texto que aparece al hacer click en una parte del cuerpo. Se llama a esta funcion desde aplicarDanioParteCuerpo

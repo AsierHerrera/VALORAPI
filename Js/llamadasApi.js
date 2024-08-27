@@ -82,6 +82,6 @@ class Armas {
 }
 
 const prueba = new Armas;
-console.log(prueba)
+//console.log(prueba)
 
 export default Armas;
